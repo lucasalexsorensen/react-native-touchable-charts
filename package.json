@@ -1,6 +1,6 @@
 {
   "name": "react-native-touchable-charts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "peerDependencies": {
     "react": ">=16.0.0-alpha.12",
