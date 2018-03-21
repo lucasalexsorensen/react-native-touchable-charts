@@ -14,7 +14,4 @@
 .gitignore
 .watchmanconfig
 LICENSE
-
-./index.js
-README.md
 yarn.lock
