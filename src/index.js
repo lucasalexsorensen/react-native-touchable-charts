@@ -1,5 +1,1 @@
-import ColumnChart from './Components/ColumnChart'
-
-export {
-  ColumnChart
-}
+export {default as ColumnChart} from './components/ColumnChart'
