@@ -16,13 +16,12 @@ export default class ColumnChart extends Component {
     colors: PropTypes.array,
     onLongPress: PropTypes.func,
     width: PropTypes.number,
-    height: PropTypes.number
+    height: PropTypes.number,
+    barMargin: PropTypes.number
   }
 
   render () {
-    const { data, colors, width, height } = this.props
-
-    const barMargin = 2
+    const { data, colors, width, height, barMargin = 2 } = this.props
 
     const unitGraduation = 10
 
