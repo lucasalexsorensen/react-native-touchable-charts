@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import styles from './styles'
@@ -7,26 +6,11 @@ import PropTypes from 'prop-types'
 import Column from '../Column/index'
 
 export default class ColumnChart extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  static propTypes = {
-    data: PropTypes.array,
-    colors: PropTypes.array,
-    onLongPress: PropTypes.func,
-    width: PropTypes.number,
-    height: PropTypes.number
-  }
-
   render () {
     const { data, colors, width, height } = this.props
-
     const barMargin = 2
-
     const unitGraduation = 10
-
-    const columnWidth = Math.floor((width - (barMargin*2*data.length)) / data.length)
+    const columnWidth = Math.floor((width - (barMargin * 2 * data.length)) / data.length)
     const max = Math.max(...data)
 
     return (
@@ -45,7 +29,7 @@ export default class ColumnChart extends Component {
               color: '#333',
               right: 28,
               top: -6
-            }}>{max - ((max/unitGraduation) * i)}</Text>
+            }}>{max - ((max / unitGraduation) * i)}</Text>
           </View>
         })}
 
@@ -64,7 +48,7 @@ export default class ColumnChart extends Component {
             onLongPress={this.props.onLongPress.bind(this, i)}
             style={{
               width: columnWidth,
-              height: el/max*height,
+              height: el / max * height,
               marginLeft: barMargin,
               marginRight: barMargin,
               backgroundColor: colors[(i % colors.length)]
@@ -75,4 +59,12 @@ export default class ColumnChart extends Component {
       </View>
     )
   }
+}
+
+ColumnChart.propTypes = {
+  data: PropTypes.array,
+  colors: PropTypes.array,
+  onLongPress: PropTypes.func,
+  width: PropTypes.number,
+  height: PropTypes.number
 }
