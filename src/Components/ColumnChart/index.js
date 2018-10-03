@@ -21,7 +21,17 @@ export default class ColumnChart extends Component {
   }
 
   render () {
-    const { data, colors, width, height, barMargin = 2 } = this.props
+    const {
+      data = [],
+      colors = ['#46b3f7', '#3386b9'],
+      width = 250,
+      height = 250,
+      barMargin = 2,
+    } = this.props
+
+    let { onLongPress } = this.props
+
+    if (typeof onLongPress !== 'function') onLongPress = function () { console.log('Default onLongPress handler.') }
 
     const unitGraduation = 10
 
@@ -60,7 +70,7 @@ export default class ColumnChart extends Component {
         {data.map((el, i) => {
           return <Column
             key={i}
-            onLongPress={this.props.onLongPress.bind(this, i)}
+            onLongPress={onLongPress.bind(this, i)}
             style={{
               width: columnWidth,
               height: el/max*height,
