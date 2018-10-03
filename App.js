@@ -14,6 +14,7 @@ export default class App extends React.Component {
         <ColumnChart
           data={data}
           colors={colors}
+          barMargin={1}
           onLongPress={i => {
             const d = new Date()
             d.setDate(d.getDate() + i + 1)
