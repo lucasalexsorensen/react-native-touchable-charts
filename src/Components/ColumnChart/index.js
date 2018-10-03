@@ -21,7 +21,7 @@ export default class ColumnChart extends Component {
   }
 
   render () {
-    const { data, colors, width, height, barMargin = 2 } = this.props
+    const { data, colors = ['#46b3f7', '#3386b9'], width, height, barMargin = 2 } = this.props
 
     const unitGraduation = 10
 
